@@ -1,0 +1,22 @@
+ALGORITHM hashTable_distinct_sum
+VAR
+    set1: ARRAY_OF INTEGER[];
+    set2: ARRAY_OF INTEGER[];
+    sum : INTEGER := 0;
+    i,j : INTEGER;
+    htab : HASH_TABLE<INTEGER,INTEGER>;
+    count : INTEGER := 1;
+BEGIN
+    FOR i FROM 0 TO set1.length-1 STEP 1  DO
+        htab.insert(<set1[i],count>)
+    END_FOR
+    FOR i FROM 0 TO set2.length-1 STEP 1  DO
+        IF (set2[i].lookup = true) THEN
+            htab.insert(<set2[i],count+1)
+        ELSE
+            htab.insert(<set2[i],count)
+        END_IF
+            sum+=htab.get(<set2[i],count>)
+    END_FOR
+END
+
