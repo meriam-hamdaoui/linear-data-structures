@@ -1,0 +1,8 @@
+ALGORITHM array-distinct-sum
+VAR
+    arr1 : ARRAY_OF INTEGER[];
+    arr2 : ARRAY_OF INTEGER[];
+    sum, i ,j : INTEGER :=0;    
+BEGIN
+   
+END
