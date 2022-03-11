@@ -1,4 +1,4 @@
-ALGORITHM array-distinct-sum
+ALGORITHM array_distinct_sum
 VAR
     arr1 : ARRAY_OF INTEGER[];
     arr2 : ARRAY_OF INTEGER[];
