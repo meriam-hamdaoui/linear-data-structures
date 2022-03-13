@@ -1,0 +1,26 @@
+ALGORITHM overlapping_sum_elements
+VAR
+    arr1 : ARRAY_OF INTEGER[];
+    arr2 : ARRAY_OF INTEGER[];
+    sum, i ,j : INTEGER :=0; 
+BEGIN
+    //read the arrays
+   FOR i FROM 0 TO arr1.length-1 DO
+       Read(arr1[i]);
+   END_FOR 
+   FOR j FROM 0 TO arr2.length-1 DO
+       Read(arr2[j]);
+   END_FOR
+   //look for overlapping elements between arrays
+    FOR i FROM 0 TO arr1.length-1 STEP 1  DO
+      FOR j FROM 0 TO arr2.length-1 STEP 1  DO
+       IF (arr1[i] === arr2[j]) THEN
+           sum += arr1[i];
+       END_IF
+     END_FOR
+   END_FOR
+
+   sum = sum * 2;
+
+    write("the sum of the overlapping elements is", sum);
+END
