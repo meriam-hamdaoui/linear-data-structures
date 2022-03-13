@@ -34,5 +34,6 @@ BEGIN
         if(hTab.get(element) = 1){
             sum += element;
         }
-    END_FOR    
+    END_FOR
+    write("the sum of the overlapping elements is", sum);    
 END
