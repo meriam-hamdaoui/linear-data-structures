@@ -5,23 +5,23 @@ VAR
     sum, i ,j : INTEGER :=0;    
 BEGIN
     //read the arrays
-   FOR i FROM 0 TO arr1.length DO
+   FOR i FROM 0 TO arr1.length-1 DO
        Read(arr1[i]);
    END_FOR 
-   FOR j FROM 0 TO arr2.length DO
+   FOR j FROM 0 TO arr2.length-1 DO
        Read(arr2[j]);
    END_FOR
    //look for distinct element in first array and add it to sum
-   FOR i FROM 0 TO arr1.length STEP 1  DO
-      FOR j FROM 0 TO arr2.length STEP 1  DO
+   FOR i FROM 0 TO arr1.length-1 STEP 1  DO
+      FOR j FROM 0 TO arr2.length-1 STEP 1  DO
        IF (arr1[i] != arr2[j]) THEN
            sum += arr1[i];
        END_IF
      END_FOR
    END_FOR
    //look for distinct element in second array and add it to sum
-   FOR j FROM 0 TO arr2.length STEP 1  DO
-      FOR i FROM 0 TO arr1.length STEP 1  DO
+   FOR j FROM 0 TO arr2.length-1 STEP 1  DO
+      FOR i FROM 0 TO arr1.length-1 STEP 1  DO
        IF (arr2[j] != arr1[i]) THEN
            sum += arr2[j];
        END_IF
