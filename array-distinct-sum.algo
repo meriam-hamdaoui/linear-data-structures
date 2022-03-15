@@ -3,6 +3,7 @@ VAR
     arr1 : ARRAY_OF INTEGER[];
     arr2 : ARRAY_OF INTEGER[];
     sum, i ,j : INTEGER :=0;    
+    distinct : BOOLEAN; 
 BEGIN
     //read the arrays
    FOR i FROM 0 TO arr1.length-1 DO
@@ -12,20 +13,30 @@ BEGIN
        Read(arr2[j]);
    END_FOR
    //look for distinct element in first array and add it to sum
-   FOR i FROM 0 TO arr1.length-1 STEP 1  DO
+   FOR i FROM 0 TO arr1.length-1  DO
+        distinct := false; 
       FOR j FROM 0 TO arr2.length-1 STEP 1  DO
        IF (arr1[i] != arr2[j]) THEN
-           sum += arr1[i];
+           distinct := true;
+           break;
        END_IF
      END_FOR
+      IF (distinct=false) THEN
+            sum:=sum+arr1[i]
+        END_IF
    END_FOR
    //look for distinct element in second array and add it to sum
    FOR j FROM 0 TO arr2.length-1 STEP 1  DO
+     distinct := false; 
       FOR i FROM 0 TO arr1.length-1 STEP 1  DO
        IF (arr2[j] != arr1[i]) THEN
-           sum += arr2[j];
+           distinct := true;
+           break;
        END_IF
      END_FOR
+     IF (distinct=false) THEN
+            sum:=sum+arr2[i]
+        END_IF
    END_FOR
    write("the sum of the distinct elements is", sum)
 END
