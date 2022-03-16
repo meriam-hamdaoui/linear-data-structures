@@ -14,11 +14,7 @@ BEGIN
     END_FOR
 
     FOR i FROM 0 TO set1.length-1 DO
-        IF (hashTable.lookup(set1[i]) = true) THEN
-            hashTable.insert(set1[i], count+1);
-        ELSE
-            hashTable.insert(set1[i], count);
-        END_IF
+        hashTable.insert(set1[i], count);
     END_FOR
     FOR j FROM 0 TO set2.length-1 DO
         IF (hashTable.lookup(set2[j]) = true) THEN
