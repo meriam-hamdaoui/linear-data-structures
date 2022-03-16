@@ -16,7 +16,7 @@ BEGIN
    FOR i FROM 0 TO arr1.length-1  DO
         distinct := false; 
       FOR j FROM 0 TO arr2.length-1 STEP 1  DO
-       IF (arr1[i] != arr2[j]) THEN
+       IF (arr1[i] = arr2[j]) THEN
            distinct := true;
            break;
        END_IF
@@ -29,7 +29,7 @@ BEGIN
    FOR j FROM 0 TO arr2.length-1 STEP 1  DO
      distinct := false; 
       FOR i FROM 0 TO arr1.length-1 STEP 1  DO
-       IF (arr2[j] != arr1[i]) THEN
+       IF (arr2[j] = arr1[i]) THEN
            distinct := true;
            break;
        END_IF
